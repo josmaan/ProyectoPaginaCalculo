@@ -1,15 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto de Calculo</title>
+    <title>Cambio de Variable en Cálculo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>Proyecto de Calculo</h1>
-    <h2>Bienvenido a nuestro Foro acerca de el cambio de variable, en este foro hablaremos de
-        la importancia de este tema y como se aplica en el calculo integral.</h2>
-        
-    </h2>
+    <header>
+        <div class="container">
+            <h1>Cambio de Variable en Cálculo Integral</h1>
+            <p>Una técnica fundamental para resolver integrales </p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#introduccion"><i class="fas fa-home"></i> Introducción</a></li>
+                <li><a href="#explicacion"><i class="fas fa-book"></i> Explicación</a></li>
+                <li><a href="#ejemplos"><i class="fas fa-calculator"></i> Ejemplos</a></li>
+                <li><a href="#video"><i class="fas fa-video"></i> Video</a></li>
+                <li><a href="#foro"><i class="fas fa-comments"></i> Foro</a></li>
+                <li><a href="#fuentes"><i class="fas fa-link"></i> Fuentes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="introduccion" class="card">
+            <h2><i class="fas fa-info-circle"></i> Introducción al Cambio de Variable</h2>
+            <p>El método de cambio de variable, también conocido como sustitución, es una técnica fundamental en cálculo integral que nos permite transformar integrales complejas en formas más simples que sabemos resolver.</p>
+            <p>Esta técnica es análoga a la regla de la cadena para derivación y es especialmente útil cuando tenemos funciones compuestas en el integrando.</p>
+        </section>
+
+        <section id="explicacion" class="card">
+            <h2><i class="fas fa-book-open"></i> Explicación Detallada</h2>
+            <h3>Concepto Matemático</h3>
+            <p>El cambio de variable se basa en el siguiente teorema:</p>
+            <div class="formula">
+                ∫f(g(x))g'(x)dx = ∫f(u)du donde u = g(x)
+            </div>
+            <p>Para aplicar correctamente el método de sustitución:</p>
+            <ol>
+                <li>Identificar una parte del integrando que se pueda sustituir por una variable simple (u)</li>
+                <li>Expresar dx en términos de du</li>
+                <li>Cambiar los límites de integración si es una integral definida</li>
+                <li>Resolver la integral en términos de u</li>
+                <li>Sustituir nuevamente la expresión original por u</li>
+            </ol>
+            
+            <h3>Casos de Aplicación</h3>
+            <ul>
+                <li>Integrales que contienen funciones compuestas</li>
+                <li>Integrales con expresiones algebraicas complicadas</li>
+                <li>Integrales trigonométricas</li>
+                <li>Integrales exponenciales</li>
+            </ul>
+        </section>
+
+        <section id="ejemplos" class="card">
+            <h2><i class="fas fa-calculator"></i> Ejemplos Prácticos</h2>
+            
+            <div class="example">
+                <h3>Ejemplo 1: Integral Simple</h3>
+                <p>Calcular ∫2x(x²+1)³ dx</p>
+                <p><strong>Solución:</strong></p>
+                <ol>
+                    <li>Hacemos u = x² + 1</li>
+                    <li>Entonces du = 2x dx</li>
+                    <li>La integral se convierte en ∫u³ du = u⁴/4 + C</li>
+                    <li>Sustituyendo de vuelta: (x²+1)⁴/4 + C</li>
+                </ol>
+            </div>
+            
+            <div class="example">
+                <h3>Ejemplo 2: Integral Trigonométrica</h3>
+                <p>Calcular ∫sin(x)cos(x) dx</p>
+                <p><strong>Solución:</strong></p>
+                <ol>
+                    <li>Hacemos u = sin(x)</li>
+                    <li>Entonces du = cos(x) dx</li>
+                    <li>La integral se convierte en ∫u du = u²/2 + C</li>
+                    <li>Sustituyendo de vuelta: sin²(x)/2 + C</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="video" class="card">
+            <h2><i class="fas fa-video"></i> Video Explicativo</h2>
+            <div class="video-container">
+                <!-- Reemplaza esto con el código de embed de tu video -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SUJQ0LxZxUY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="video-description">En este video explicamos paso a paso cómo aplicar el método de cambio de variable con varios ejemplos prácticos.</p>
+            </div>
+        </section>
+
+        <section id="foro" class="card">
+            <h2><i class="fas fa-comments"></i> Foro de Discusión</h2>
+            <div class="forum">
+                <h3>¿Tienes dudas sobre cambio de variable?</h3>
+                <p>Participa en nuestro foro y comparte tus preguntas o soluciones.</p>
+                
+                <div class="comment">
+                    <h4>Usuario: Matemático23</h4>
+                    <p>¿Cómo saber cuál es la mejor sustitución para hacer en una integral compleja?</p>
+                    <p class="comment-date">Publicado el 12/05/2023</p>
+                </div>
+                
+                <div class="comment">
+                    <h4>Usuario: CalculoPro</h4>
+                    <p>Generalmente busco partes del integrando cuya derivada también aparezca. Con práctica se desarrolla intuición para elegir buenas sustituciones.</p>
+                    <p class="comment-date">Publicado el 13/05/2023</p>
+                </div>
+                
+                <form class="comment-form">
+                    <h3>Añade tu comentario</h3>
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Comentario:</label>
+                        <textarea id="comment" name="comment" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="fuentes" class="card">
+            <h2><i class="fas fa-link"></i> Fuentes y Referencias</h2>
+            <ul class="references">
+                <li>Stewart, J. (2015). <em>Cálculo: Trascendentes tempranas</em>. Cengage Learning.</li>
+                <li>Thomas, G. B., & Finney, R. L. (2005). <em>Cálculo una variable</em>. Pearson Educación.</li>
+                <li>Khan Academy. (2021). <em>Integración por sustitución</em>. 
+                <li>MIT OpenCourseWare. (2020). <em>Single Variable Calculus</em>. 
+                <li>Weisstein, Eric W. <em>Integration by Substitution</em>. MathWorld. 
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Proyecto sobre Cambio de Variable en Cálculo Integral</p>
+            <p>&copy; 2025 - Todos los derechos reservados</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
