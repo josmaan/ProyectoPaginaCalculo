@@ -1,1 +1,113 @@
 
+body{
+ margin:0;
+ padding:0;
+  background-color: #f0f0f0; /* Color de fondo gris claro */
+
+
+}
+
+.container {
+  width: 100%;
+  top: 0;
+  color:black;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Fijado al inicio de la página */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+   /* Bordes redondeados */
+}
+.container li {
+     color: black;
+    float:left;/*2*/
+    margin: 1% 1%; /* Espaciado uniforme entre elementos */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(81, 1, 97, 0.1); /* Sombra para dar profundidad */
+
+    position: relative; /* Asegura que .container esté arriba */
+    z-index: 1; /* Prioridad para estar encima */
+    top: 0; /* Asegura que esté al inicio */
+    font-style: oblique ;
+    list-style: none;
+    display: block;
+    border-color: pink;
+    padding: 0px 30px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+   font-family: "Oleo Script", system-ui;
+    
+    
+  }
+  .container a{
+    color:#3880c4;
+    
+    
+  }
+
+  .container :hover{
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+    color: #fc6ee4; /* Color del texto al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 12px rgba(81, 1, 97, 0.2); /* Sombra más pronunciada al pasar el mouse */
+  }
+
+ 
+    
+.cuerpo{
+  background: 36e5aa;
+  
+}
+    
+.logoo{
+    width: 20%; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    position: absolute; /* Posición absoluta para que esté en la parte superior */
+    top: 10%; /* Ajusta la distancia desde la parte superior */
+    left: 10px; /* Ajusta la distancia desde la izquierda */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+
+  .container1{
+    background: linear-gradient(to right,#38c2c4, #ffff,#38c2c4 ); /* Degradado de color */;
+    padding-top:0%;
+    border-radius: 50%;
+     margin:10%;
+
+  }
+  
+  
+    
+
+    
+
+ h1 {
+    text-align: center;
+    font-size: 50px;
+  font-family: "Oleo Script", system-ui;
+  padding-top: 8%;
+  color: #2b0e92;*/
+ 
+}
+
+
+h2{
+    text-align: center;
+    font-size: 30px;
+  font-family: "Oleo Script", system-ui;
+  color:#2b0e92;;
+  
+}
+.container1 p{
+    text-align: center;
+    font-size: 20px;
+  font-family: "Oleo Script", system-ui;
+  color:#2b0e92;
+  padding-top: 2%;;
+}
+
+p,h3{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-weight: bold;
+}
