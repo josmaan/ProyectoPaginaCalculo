@@ -75,7 +75,11 @@ body{
     z-index: 1000; /*  por encima de otros elementos */
     
   }
-
+  body {
+    background: linear-gradient(to bottom, #ffffff 50%, #70a6db 50%); /* Fondo con dos capas: blanco y azul */
+    background-attachment: fixed; /* Asegura que el fondo cubra todo el documento */
+    background-size: 100% 100%; /* Ajusta el tamaño del fondo para cubrir todo */
+  }
   button {
     background-color: #3880c4; /* Color de fondo del botón */
     color: white; /* Color del texto */
@@ -134,7 +138,7 @@ body{
   .container1{
     
   
-    background: linear-gradient(to right, #f8f9fa, #70a6db); /* Degradado de fondo */
+   /* background: linear-gradient(to right, #f8f9fa, #70a6db); Degradado de fondo */
     border-radius: 50%;;
     width: 90%; /* Ancho del contenedor */
      margin-top:5%;
