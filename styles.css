@@ -1,197 +1,822 @@
 
-body{
- margin:0;
- padding:0;
 
- background: #ffff;
- 
+/*
+ * Inicialización de variables CSS
+ */
+:root {
+  /* Colores primarios (azules) */
+  --primary-900: #1a365d;       /* Azul oscuro principal */
+  --primary-700: #2a4365;       /* Variante oscura */
+  --primary-500: #4299e1;       /* Azul medio - color de acento */
+  --primary-300: #90cdf4;       /* Azul claro */
+  --primary-100: #ebf8ff;       /* Azul muy claro - fondo */
+  
+  /* Colores neutrales (grises) */
+  --neutral-900: #1a202c;       /* Texto principal */
+  --neutral-700: #4a5568;       /* Texto secundario */
+  --neutral-500: #718096;       /* Texto terciario */
+  --neutral-300: #e2e8f0;       /* Bordes */
+  --neutral-100: #f7fafc;       /* Fondos claros */
+  
+  /* Colores básicos */
+  --white: #ffffff;
+  --black: #000000;
+  
+  /* Sistema de radios (esquinas redondeadas) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;        /* Para elementos completamente redondeados */
+  
+  /* Sistema de sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Transición estándar para efectos */
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* 
+ * =============================================
+ * RESET Y ESTILOS BASE
+ * =============================================
+ */
 
-.container { /*el navegador*/
+/* Reset básico para eliminar márgenes y paddings por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Modelo de caja más predecible */
+}
+
+/* estilo generales del cuerpo  */
+body {
+  font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif; /* Fuente principal con fallbacks */
+  background-color: var(--primary-100); /* Fondo azul muy claro */
+  color: var(--neutral-900); /* Color de texto principal */
+  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+  letter-spacing: 0.02em; /* Espaciado entre letras sutil */
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer scroll a anclas */
+}
+
+/* 
+ * =============================================
+ * ESTRUCTURA Y CONTENEDORES PRINCIPALES
+ * =============================================
+ */
+
+/* Contenedor general centrado con ancho máximo */
+.container {
   width: 100%;
-  top: 0;
-  color:rgb(199, 32, 32);
-  justify-content: center;
+  max-width: 1200px; /* Ancho máximo para pantallas grandes */
+  margin: 0 auto; /* Centrado horizontal */
+  padding: 0 1.5rem; /* Padding lateral para móviles */
+}
+
+/* Estilos específicos para el contenedor del encabezado */
+.header-container {
+  position: relative; /* Para posicionar elementos hijos relativamente */
+  padding: 2rem 0; /* Espaciado vertical */
+  text-align: center; /* Centrado de texto */
+}
+
+/* Contenedor principal del contenido */
+.main-content {
+  padding: 2rem 0; /* Espaciado vertical */
+}
+
+/* 
+ * =============================================
+ * ENCABEZADO Y LOGO
+ * =============================================
+ */
+
+/* Estilos del encabezado */
+header {
+  background-color: var(--white); /* Fondo blanco */
+  box-shadow: var(--shadow-sm); /* Sombra sutil */
+  position: relative; 
+  z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+
+/* Contenedor del título principal */
+.title-container {
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+}
+
+/* Divisor decorativo en el encabezado */
+.header-divider {
+  border: 0; /* Elimina el borde por defecto */
+  height: 1px; /* Grosor de la línea */
+  background-color: var(--neutral-300); /* Color de la línea */
+  margin: 1.5rem auto; /* Margen vertical y centrado horizontal */
+  width: 80%; /* Ancho relativo */
+}
+
+/* Contenedor del logo */
+.logo-container {
+  margin-top: 1rem; /* Espaciado superior */
+}
+
+/* Estilos de la imagen del logo */
+.logo-img {
+  border-radius: var(--radius-md); /* Esquinas redondeadas */
+  transition: var(--transition); /* Transición suave para efectos hover */
+}
+
+/* Efecto hover para el logo */
+.logo-img:hover {
+  transform: scale(1.05); /* Ligero aumento de tamaño */
+  opacity: 0.9; /* Ligera transparencia */
+}
+
+/*
+ * =============================================
+ * BARRA DE NAVEGACIÓN
+ * =============================================
+ */
+
+/* Barra de navegación principal */
+.main-nav {
+  background-color: var(--white); /* Fondo blanco */
+  position: sticky; /* Se mantiene fija al hacer scroll */
+  top: 0; /* Pegada al tope */
+  z-index: 999; /* Z-index alto pero menor que el header */
+  box-shadow: var(--shadow-sm); /* Sombra sutil */
+}
+
+/* Contenedor de la navegación */
+.nav-container {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+}
+
+/* Lista de navegación */
+.nav-list {
+  display: flex;
+  gap: 0.5rem; /* Espacio entre elementos */
+  list-style: none; /* Elimina viñetas */
+  padding: 1rem 0; /* Espaciado vertical */
+  overflow-x: auto; /* Permite scroll horizontal si es necesario */
+}
+
+/* Oculta scrollbar en Chrome/Safari */
+.nav-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Elementos de navegación que no se encogen */
+.nav-item {
+  flex-shrink: 0;
+}
+
+/* Estilos de los enlaces de navegación */
+.nav-link {
+  display: flex;
+  align-items: center; /* Centrado vertical */
+  gap: 0.5rem; /* Espacio entre icono y texto */
+  padding: 0.75rem 1.25rem; /* Espaciado interno */
+  border-radius: var(--radius-full); /* Completamente redondeado */
+  color: var(--neutral-700); /* Color de texto */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 500; /* Grosor de fuente */
+  transition: var(--transition); /* Transición suave */
+  background-color: transparent; /* Fondo transparente por defecto */
+}
+
+/* Efectos hover y focus para enlaces */
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--primary-500); /* Cambia color al azul medio */
+  background-color: rgba(66, 153, 225, 0.1); /* Fondo azul muy tenue */
+}
+
+/* Estilos para iconos de navegación */
+.nav-icon {
+  font-size: 1rem; /* Tamaño consistente */
+}
+
+/*
+ * =============================================
+ * TARJETAS DE CONTENIDO
+ * =============================================
+ */
+
+/* Estilos base para tarjetas de contenido */
+.content-card {
+  background-color: var(--white); /* Fondo blanco */
+  border-radius: var(--radius-lg); /* Esquinas redondeadas */
+  box-shadow: var(--shadow-sm); /* Sombra sutil */
+  padding: 2rem; /* Espaciado interno */
+  margin-bottom: 2rem; /* Espaciado inferior */
+  border: 1px solid var(--neutral-300); /* Borde sutil */
+  transition: var(--transition); /* Transición para efectos hover */
+}
+
+/* Efecto hover para tarjetas */
+.content-card:hover {
+  box-shadow: var(--shadow-md); /* Sombra más pronunciada */
+  transform: translateY(-2px); /* Ligero movimiento hacia arriba */
+}
+
+/*
+ * =============================================
+ * TIPOGRAFÍA Y TEXTOS
+ * =============================================
+ */
+
+/* Estilos para títulos de sección */
+.section-title {
+  font-family: 'Comfortaa', cursive; /* Fuente especial para títulos */
+  color: var(--primary-700); /* Color azul oscuro */
+  font-weight: 600; /* Grosor semi-negrita */
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+  position: relative; /* Para el pseudo-elemento decorativo */
+  padding-bottom: 0.5rem; /* Espacio para el subrayado */
+}
+
+/* Subrayado decorativo para títulos de sección */
+.section-title::after {
+  content: ''; /* Contenido vacío */
+  position: absolute; /* Posicionamiento absoluto relativo al título */
+  bottom: 0; /* Alineado al fondo */
+  left: 0; /* Alineado a la izquierda */
+  width: 60px; /* Ancho del subrayado */
+  height: 3px; /* Grosor del subrayado */
+  background-color: var(--primary-500); /* Color azul */
+  border-radius: var(--radius-full); /* Completamente redondeado */
+}
+
+/* Estilos para iconos en títulos */
+.section-icon {
+  margin-right: 0.75rem; /* Espacio a la derecha */
+  color: var(--primary-500); /* Color azul */
+}
+
+
+.application-article {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.application-cards {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.application-card {
+  min-width: 200px;
+  flex: 1;
+  padding: 1.5rem;
+  background: #f9fafc;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  position: fixed; /* Fijado al inicio de la página */
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
-   /* Bordes redondeados */
-  
-   box-shadow: 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */ 
-
-  
 }
-.container li {
-     color: black;
-    float:left;/*2*/
-    margin: 1% 1%; /* Espaciado uniforme entre elementos */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(81, 1, 97, 0.1); /* Sombra para dar profundidad */
-    
-    position: relative; /* Asegura que .container esté arriba */
-    z-index: 1; /* Prioridad para estar encima */
-    top: 0; /* Asegura que esté al inicio */
-    font-style: oblique ;
-    list-style: none;
-    display: block;
-    border-color: pink;
-    padding: 0px 30px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 18px;
-   font-family: "Oleo Script", system-ui;
-   ;
-    
-    
-  }
-  .container a{
-    color:#3880c4;
-    
-    
-  }
 
-  .container :hover{
-    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
-    color: #fc6ee4; /* Color del texto al pasar el mouse */
-    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
-    box-shadow: 0 8px 12px rgba(81, 1, 97, 0.2); /* Sombra más pronunciada al pasar el mouse */
-    
-  }
-
- 
-    
-.cuerpo{
-  background: 36e5aa;
-  
+.application-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  border-color: var(--primary-300);
 }
-    
-.logoo{
-    width: 20%; /* Ajusta el tamaño s */
-    height: auto; /* */
-    position: absolute; /* Posición  para que esté en la parte superior */
-    top: -20%; /* distancia desde la parte superior */
-    left: -10%; /* Ajusta la distancia desde la izquierda */
-    z-index: 1000; /*  por encima de otros elementos */
-    
-  }
-  body {
-    background: linear-gradient(to bottom, #ffffff 50%, #70a6db 50%); /* Fondo con dos capas: blanco y azul */
-    background-attachment: fixed; /* Asegura que el fondo cubra todo el documento */
-    background-size: 100% 100%; /* Ajusta el tamaño del fondo para cubrir todo */
-  }
-  button {
-    background-color: #3880c4; /* Color de fondo del botón */
-    color: white; /* Color del texto */
-    border: none; /* Sin bordes */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 16px; /* Tamaño de fuente */
-    font-family: "Oleo Script", system-ui; /* Fuente */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: all 0.3s ease; /* Transición suave para efectos */
-    
-  }
 
-  button:hover {
-    background-color: #2b0e92; /* Color de fondo al pasar el mouse */
-    transform: scale(1.1); /* Efecto de agrandamiento */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
-  }
+.app-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-100);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  color: var(--primary-500);
+}
 
-  footer {
-    background-color: #f8f9fa; /* Color de fondo del pie de página */
-    text-align: center; /* Centrar el texto */
-    padding: 20px; /* Espaciado interno */
-    font-family: "Oleo Script", system-ui; /* Fuente */
-    font-size: 14px; /* Tamaño de fuente */
-    color: #6c757d; /* Color del texto */
-    position: fixed; /* Fijar al final de la página */
-    bottom: 0; /* Posición en la parte inferior */
-    width: 100%; /* Ancho completo */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra superior */
+.app-icon svg {
+  width: 24px;
+  height: 24px;
+}
 
-  }
-
-  .card {
-    background-color: white; /* Fondo blanco */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-    padding: 20px; /* Espaciado interno */
-    margin: 20px auto; /* Margen superior e inferior */
-    max-width: 600px; /* Ancho máximo */
-    font-family: "Oleo Script", system-ui; /* Fuente */
-    
-  }
-
-  .card h3 {
-    font-size: 24px; /* Tamaño de fuente */
-    color: #2b0e92; /* Color del texto */
-    margin-bottom: 10px; /* Espaciado inferior */
-  }
-
-  .card p {
-    font-size: 16px; /* Tamaño de fuente */
-    color: #6c757d; /* Color del texto */
-    line-height: 1.5; /* Altura de línea */
-  }
-  .container1{
-    
-  
-   /* background: linear-gradient(to right, #f8f9fa, #70a6db); Degradado de fondo */
-    border-radius: 50%;;
-    width: 90%; /* Ancho del contenedor */
-     margin-top:5%;
-    margin-left: 6%; /* Centrar el contenedor */
-    justify-content: center;
-    align-items: center;
-    
-   
-     
-  }
-  
-
-  .imagen{
-    width: 10%; /* Ajusta el tamaño de la imagen */;
-  }
-  
-  
-    
-
-    
-
- h1 {
-  
+.app-title {
+  font-size: 1.1rem;
+  color: var(--primary-700);
+  margin-bottom: 0.5rem;
   text-align: center;
-  font-size: 50px;
-  font-family: "Oleo Script", system-ui;
- 
-  border-radius: 15px; /* Bordes redondeados */
- /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
-  padding-top: 8%;
-  color: #2b0e92;*/
- 
+  font-weight: 600;
+}
+
+.app-desc {
+  font-size: 0.9rem;
+  color: var(--neutral-600);
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
 }
 
 
-h2{
-    text-align: center;
-    font-size: 30px;
-  font-family: "Oleo Script", system-ui;
-  color:#2b0e92;
-  top:-20%;
+
+/* Jerarquía de encabezados */
+h1 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-900);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-700);
+  margin: 2rem 0 1.5rem;
+}
+
+h3 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-700);
+  margin: 1.5rem 0 1rem;
+}
+
+/* Estilos para párrafos */
+p {
+  color: var(--neutral-700);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/*
+ * =============================================
+ * COMPONENTES ESPECÍFICOS
+ * =============================================
+ */
+
+/* Caja de texto destacada */
+.text-box {
+  background-color: var(--neutral-100); /* Fondo gris muy claro */
+  border-radius: var(--radius-md); /* Esquinas redondeadas */
+  padding: 1.5rem; /* Espaciado interno */
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+  border-left: 4px solid var(--primary-500); /* Borde lateral azul */
+}
+
+/* Caja para fórmulas matemáticas */
+.formula-box {
+  background-color: var(--neutral-100); /* Fondo gris muy claro */
+  border-radius: var(--radius-md); /* Esquinas redondeadas */
+  padding: 1rem; /* Espaciado interno */
+  margin: 1.5rem 0; /* Espaciado vertical */
+  text-align: center; /* Texto centrado */
+  font-family: 'Courier New', monospace; /* Fuente monoespaciada para fórmulas */
+  font-size: 1.2rem; /* Tamaño aumentado */
+  color: var(--primary-900); /* Color azul oscuro */
+  border: 1px dashed var(--primary-300); /* Borde azul claro discontinuo */
+}
+
+/* Texto de fórmulas matemáticas */
+.math-formula {
+  font-family: 'Courier New', monospace;
+  font-weight: bold; /* Negrita para mejor legibilidad */
+}
+
+/* Lista de pasos */
+.step-list {
+  margin: 1.5rem 0; /* Espaciado vertical */
+  padding-left: 1.5rem; /* Sangría */
+}
+
+/* Elementos individuales de pasos */
+.step-item {
+  margin-bottom: 0.75rem; /* Espaciado entre pasos */
+  position: relative; /* Para el pseudo-elemento */
+  padding-left: 1.75rem; /* Espacio para la flecha */
+}
+
+/* Flecha decorativa antes de cada paso */
+.step-item::before {
+  content: '→'; /* Símbolo de flecha */
+  position: absolute; /* Posicionamiento absoluto */
+  left: 0; /* Alineado a la izquierda */
+  color: var(--primary-500); /* Color azul */
+}
+
+/* Lista de aplicaciones/casos de uso */
+.application-list {
+  margin: 1.5rem 0; /* Espaciado vertical */
+  display: grid; /* Layout en grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+  gap: 1rem; /* Espacio entre elementos */
+}
+
+/* Elementos individuales de aplicaciones */
+.application-item {
+  background-color: var(--neutral-100); /* Fondo gris muy claro */
+  padding: 1rem; /* Espaciado interno */
+  border-radius: var(--radius-md); /* Esquinas redondeadas */
+  display: flex; /* Layout flexible */
+  align-items: center; /* Centrado vertical */
+  gap: 0.75rem; /* Espacio entre icono y texto */
+}
+
+/* Iconos en elementos de aplicación */
+.item-icon {
+  color: var(--primary-500); /* Color azul */
+}
+
+/*
+ * =============================================
+ * EJEMPLOS PRÁCTICOS
+ * =============================================
+ */
+
+/* Contenedor de artículo de ejemplo */
+.example-article {
+  margin-bottom: 2.5rem; /* Espaciado inferior grande */
+}
+
+/* Título de ejemplo */
+.example-title {
+  font-family: 'Comfortaa', cursive; /* Fuente especial */
+  font-size: 1.3rem; /* Tamaño aumentado */
+  color: var(--primary-700); /* Color azul oscuro */
+  margin-bottom: 0.75rem; /* Espaciado inferior */
+  display: flex; /* Layout flexible */
+  align-items: center; /* Centrado vertical */
+  gap: 0.5rem; /* Espacio entre icono y texto */
+}
+
+/* Icono decorativo antes del título de ejemplo */
+.example-title::before {
+  content: '✎'; /* Símbolo de lápiz */
+  color: var(--primary-500); /* Color azul */
+}
+
+/* Enunciado del problema */
+.problem-statement {
+  font-family: 'Courier New', monospace; /* Fuente monoespaciada */
+  background-color: var(--neutral-100); /* Fondo gris muy claro */
+  padding: 1rem; /* Espaciado interno */
+  border-radius: var(--radius-md); /* Esquinas redondeadas */
+  margin-bottom: 1rem; /* Espaciado inferior */
+  font-weight: bold; /* Negrita para destacar */
+}
+
+/* Caja de solución */
+.solution-box {
+  background-color: var(--neutral-100); /* Fondo gris muy claro */
+  border-radius: var(--radius-md); /* Esquinas redondeadas */
+  padding: 1.5rem; /* Espaciado interno */
+  border-left: 4px solid var(--primary-500); /* Borde lateral azul */
+}
+
+/* Título de solución */
+.solution-title {
+  font-weight: 600; /* Grosor semi-negrita */
+  color: var(--primary-700); /* Color azul oscuro */
+  margin-bottom: 1rem; /* Espaciado inferior */
+  display: flex; /* Layout flexible */
+  align-items: center; /* Centrado vertical */
+  gap: 0.5rem; /* Espacio entre icono y texto */
+}
+
+/* Icono de check antes del título de solución */
+.solution-title::before {
+  content: '✓'; /* Símbolo de check */
+  color: var(--primary-500); /* Color azul */
+}
+
+/* Lista de pasos de solución */
+.solution-steps {
+  padding-left: 1.5rem; /* Sangría */
+}
+
+/* Elementos individuales de pasos de solución */
+.solution-steps li {
+  margin-bottom: 0.75rem; /* Espaciado entre pasos */
+  position: relative; /* Para el pseudo-elemento */
+  padding-left: 1.25rem; /* Espacio para el bullet */
+}
+
+/* Bullet decorativo para pasos de solución */
+.solution-steps li::before {
+  content: '•'; /* Símbolo de bullet */
+  position: absolute; /* Posicionamiento absoluto */
+  left: 0; /* Alineado a la izquierda */
+  color: var(--primary-500); /* Color azul */
+  font-weight: bold; /* Negrita para mejor visibilidad */
+}
+
+/*
+ * =============================================
+ * REPRODUCTOR DE VIDEO
+ * =============================================
+ */
+
+/* Contenedor responsivo para video */
+.video-responsive-container {
+  position: relative; /* Para el posicionamiento absoluto del iframe */
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 (9/16 = 0.5625) */
+  height: 0; /* Altura determinada por el padding */
+  overflow: hidden; /* Oculta cualquier desbordamiento */
+  margin: 2rem 0; /* Espaciado vertical */
+  border-radius: var(--radius-lg); /* Esquinas redondeadas */
+  box-shadow: var(--shadow-md); /* Sombra media */
+}
+
+/* Iframe del video */
+.video-embed {
+  position: absolute; /* Posicionamiento absoluto dentro del contenedor */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  border: none; /* Sin borde */
+}
+
+/* Caja de descripción del video */
+.video-description-box {
+  background-color: var(--neutral-100); /* Fondo gris muy claro */
+  padding: 1.5rem; /* Espaciado interno */
+  border-radius: var(--radius-md); /* Esquinas redondeadas */
+  margin-bottom: 2rem; /* Espaciado inferior */
+}
+
+/* Texto de descripción */
+.video-description {
+  margin-bottom: 0.5rem; /* Espaciado inferior */
+}
+
+/* Duración del video */
+.video-duration {
+  color: var(--neutral-500); /* Color gris */
+  font-size: 0.9rem; /* Tamaño reducido */
+  display: flex; /* Layout flexible */
+  align-items: center; /* Centrado vertical */
+  gap: 0.5rem; /* Espacio entre icono y texto */
+}
+
+/*
+ * =============================================
+ * FORMULARIO DE COMENTARIOS
+ * =============================================
+ */
+
+/* Formulario principal */
+.comment-form {
+  background-color: var(--white); /* Fondo blanco */
+  padding: 2rem; /* Espaciado interno */
+  border-radius: var(--radius-lg); /* Esquinas redondeadas */
+  box-shadow: var(--shadow-sm); /* Sombra sutil */
+  margin: 2rem 0; /* Espaciado vertical */
+}
+
+/* Título del formulario */
+.form-title {
+  font-family: 'Comfortaa', cursive; /* Fuente especial */
+  color: var(--primary-700); /* Color azul oscuro */
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+  font-size: 1.5rem; /* Tamaño aumentado */
+}
+
+/* Grupos de campos del formulario */
+.form-group {
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+}
+
+/* Etiquetas de los campos */
+.form-label {
+  display: block; /* Ocupa toda la línea */
+  margin-bottom: 0.5rem; /* Espaciado inferior */
+  font-weight: 600; /* Grosor semi-negrita */
+  color: var(--neutral-700); /* Color gris oscuro */
+}
+
+/* Campos de entrada y textarea */
+.form-input,
+.form-textarea {
+  width: 100%; /* Ancho completo */
+  padding: 0.75rem 1rem; /* Espaciado interno */
+  border: 1px solid var(--neutral-300); /* Borde sutil */
+  border-radius: var(--radius-md); /* Esquinas redondeadas */
+  font-family: 'Nunito Sans', sans-serif; /* Fuente consistente */
+  transition: var(--transition); /* Transición suave */
+  background-color: var(--neutral-100); /* Fondo gris muy claro */
+}
+
+/* Estados focus para campos */
+.form-input:focus,
+.form-textarea:focus {
+  outline: none; /* Elimina el outline por defecto */
+  border-color: var(--primary-500); /* Borde azul */
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2); /* Sombra azul sutil */
+}
+
+/* Estilos específicos para textarea */
+.form-textarea {
+  min-height: 150px; /* Altura mínima */
+  resize: vertical; /* Permite redimensionar solo verticalmente */
+}
+
+/* Contenedor de botones del formulario */
+.form-actions {
+  display: flex; /* Layout flexible */
+  gap: 1rem; /* Espacio entre botones */
+  margin-top: 1.5rem; /* Espaciado superior */
+}
+
+/* Botón de enviar */
+.submit-button {
+  background-color: var(--primary-500); /* Fondo azul */
+  color: var(--white); /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 0.75rem 1.5rem; /* Espaciado interno */
+  border-radius: var(--radius-md); /* Esquinas redondeadas */
+  font-weight: 600; /* Grosor semi-negrita */
+  cursor: pointer; /* Cursor de pointer */
+  transition: var(--transition); /* Transición suave */
+}
+
+/* Estados hover y focus para botón de enviar */
+.submit-button:hover,
+.submit-button:focus {
+  background-color: var(--primary-700); /* Azul más oscuro */
+  transform: translateY(-2px); /* Ligero movimiento hacia arriba */
+}
+
+/* Botón de reset */
+.reset-button {
+  background-color: var(--neutral-300); /* Fondo gris */
+  color: var(--neutral-700); /* Texto gris oscuro */
+  border: none; /* Sin borde */
+  padding: 0.75rem 1.5rem; /* Espaciado interno */
+  border-radius: var(--radius-md); /* Esquinas redondeadas */
+  font-weight: 600; /* Grosor semi-negrita */
+  cursor: pointer; /* Cursor de pointer */
+  transition: var(--transition); /* Transición suave */
+}
+
+/* Estados hover y focus para botón de reset */
+.reset-button:hover,
+.reset-button:focus {
+  background-color: var(--neutral-500); /* Gris más oscuro */
+  color: var(--white); /* Texto blanco */
+}
+
+
+/* Lista de referencias */
+.references-list {
+  margin: 2rem 0; /* Espaciado vertical */
+}
+
+/* Elementos individuales de referencia */
+.reference-item {
+  margin-bottom: 1rem; /* Espaciado entre referencias */
+  padding-left: 1.5rem; /* Sangría */
+  position: relative; /* Para el pseudo-elemento */
+}
+
+/* Icono decorativo antes de cada referencia */
+.reference-item::before {
+  content: '📚'; /* Emoji de libros */
+  position: absolute; /* Posicionamiento absoluto */
+  left: 0; /* Alineado a la izquierda */
+}
+
+/* Iconos en referencias */
+.reference-icon {
+  margin-right: 0.5rem; /* Espacio a la derecha */
+  color: var(--primary-500); /* Color azul */
+}
+
+/* Enlaces en referencias */
+.reference-link {
+  color: var(--primary-500); /* Color azul */
+  text-decoration: none; /* Sin subrayado */
+  transition: var(--transition); /* Transición suave */
+}
+
+/* Efecto hover para enlaces de referencia */
+.reference-link:hover {
+  color: var(--primary-700); /* Azul más oscuro */
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Pie de página principal */
+.main-footer {
+  background-color: var(--primary-900); /* Fondo azul oscuro */
+  color: var(--white); /* Texto blanco */
+  padding: 3rem 0; /* Espaciado vertical grande */
+  margin-top: 3rem; /* Espaciado superior */
+}
+
+/* Contenedor del footer */
+.footer-container {
+  display: flex;
+  flex-direction: column; /* Disposición en columna */
+  gap: 2rem; /* Espacio entre elementos */
+}
+
+/* Contenido del footer */
+.footer-content {
+  display: grid; /* Layout en grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+  gap: 2rem; /* Espacio entre columnas */
+}
+
+/* Información del footer */
+.footer-info {
+  display: flex;
+  flex-direction: column; /* Disposición en columna */
+  gap: 1rem; /* Espacio entre elementos */
+}
+
+/* Texto del footer */
+.footer-text {
+  color: var(--neutral-300); /* Color gris claro */
+  font-size: 1rem; /* Tamaño estándar */
+  line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Copyright */
+.footer-copyright {
+  color: var(--neutral-300); /* Color gris claro */
+  font-size: 0.9rem; /* Tamaño reducido */
+}
+
+/* Enlaces del footer */
+.footer-links {
+  display: flex;
+  flex-direction: column; /* Disposición en columna */
+  gap: 0.75rem; /* Espacio entre enlaces */
+}
+
+/* Estilos para enlaces del footer */
+.footer-link {
+  color: var(--neutral-300); /* Color gris claro */
+  text-decoration: none; /* Sin subrayado */
+  transition: var(--transition); /* Transición suave */
+}
+
+/* Efecto hover para enlaces del footer */
+.footer-link:hover {
+  color: var(--white); /* Texto blanco */
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Redes sociales */
+.social-links {
+  display: flex;
+  gap: 1rem; /* Espacio entre iconos */
+  align-items: center; /* Centrado vertical */
+}
+
+/* Enlaces de redes sociales */
+.social-link {
+  color: var(--white); /* Iconos blancos */
+  font-size: 1.25rem; /* Tamaño aumentado */
+  transition: var(--transition); /* Transición suave */
+}
+
+/* Efecto hover para redes sociales */
+.social-link:hover {
+  color: var(--primary-300); /* Azul claro */
+  transform: translateY(-2px); /* Ligero movimiento hacia arriba */
+}
+
+/* Media query para móviles */
+@media (max-width: 480px) {
+  /* Ajustes de padding general */
+  .container {
+    padding: 0 1rem;
+  }
   
-}
-.container1 p{
-    text-align: center;
-    font-size: 20px;
-  font-family: "Oleo Script", system-ui;
-  color:#2b0e92;
+  /* Ajustes de tarjetas */
+  .content-card {
+    padding: 1.25rem;
+  }
   
-}
-
-p,h3{
-    text-align: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    font-weight: bold;
+  /* Ajustes de ejemplos */
+  .example-article,
+  .solution-box {
+    padding: 1rem;
+  }
+  
+  /* Lista de aplicaciones en una columna */
+  .application-list {
+    grid-template-columns: 1fr;
+  }
 }
