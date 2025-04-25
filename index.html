@@ -3,176 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cambio de Variable en Cálculo</title>
+    <meta name="description" content="Explicación y ejemplos del método de cambio de variable en cálculo integral">
+    <meta name="keywords" content="cálculo, integral, cambio de variable, matemáticas">
+    <title>Cambio de Variable en Cálculo Integral - Guía Completa</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oleo+Script:wght@400;700&family=Playwrite+IN&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
-    
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lilita+One&family=Oleo+Script:wght@400;700&family=Playwrite+IN&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet"></head>
 <body>
     <header>
-        <div class="container1" style="position: relative;">
-            
-            <h1>∫Cambio de Variable en Cálculo Integral</h1>
-            <p>Una técnica fundamental para resolver integrales </p>
-            
-            <hr>
-           <div class="logoo">
-            <img src="https://www.cdcuauhtemoc.tecnm.mx/wp-content/uploads/2021/08/LOGO-VERTICAL-TECNM.png" width="100">
-            
-            
-
-        </div>
-        
+        <div class="container header-container">
+            <div class="title-container">
+                <h1>Cambio de Variable en Cálculo Integral</h1>
+                <p class="subtitle">Una técnica fundamental para resolver integrales complejas</p>
+            </div>
+            <hr class="header-divider">
+            <div class="logo-container">
+                <img src="images/math-logo.png" alt="Logo de Matemáticas Avanzadas" class="logo-img" width="120">
+            </div>
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#introduccion"><i class="fas fa-home"></i> Introducción</a></li>
-                <li><a href="#explicacion"><i class="fas fa-book"></i> Explicación</a></li>
-                <li><a href="#ejemplos"><i class="fas fa-calculator"></i> Ejemplos</a></li>
-                <li><a href="#video"><i class="fas fa-video"></i> Video</a></li>
-                <li><a href="#foro"><i class="fas fa-comments"></i> Foro</a></li>
-                <li><a href="#fuentes"><i class="fas fa-link"></i> Fuentes</a></li>
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#introduccion" class="nav-link"><i class="fas fa-home nav-icon"></i> Introducción</a></li>
+                <li class="nav-item"><a href="#explicacion" class="nav-link"><i class="fas fa-book nav-icon"></i> Explicación</a></li>
+                <li class="nav-item"><a href="#ejemplos" class="nav-link"><i class="fas fa-calculator nav-icon"></i> Ejemplos</a></li>
+                <li class="nav-item"><a href="#video" class="nav-link"><i class="fas fa-video nav-icon"></i> Video</a></li>
+                <li class="nav-item"><a href="#foro" class="nav-link"><i class="fas fa-comments nav-icon"></i> Foro</a></li>
+                <li class="nav-item"><a href="#fuentes" class="nav-link"><i class="fas fa-link nav-icon"></i> Fuentes</a></li>
             </ul>
         </div>
     </nav>
-    <div class="cuerpo">
-    <main class="container3">
-       
-        <section id="introduccion" class="card">
-            <h2><i class="fas fa-info-circle"></i> Introducción al Cambio de Variable</h2>
-            <p>El método de cambio de variable, también conocido como sustitución, es una técnica fundamental en cálculo integral que nos permite transformar integrales complejas en formas más simples que sabemos resolver.</p>
-            <p>Esta técnica es análoga a la regla de la cadena para derivación y es especialmente útil cuando tenemos funciones compuestas en el integrando.</p>
-        </section>
 
-        <section id="explicacion" class="card">
-            <h2><i class="fas fa-book-open"></i> Explicación Detallada</h2>
-            <h3>Concepto Matemático</h3>
-            <p>El cambio de variable se basa en el siguiente teorema:</p>
-            <div class="formula">
-                ∫f(g(x))g'(x)dx = ∫f(u)du donde u = g(x)
-            </div>
-            <p>Para aplicar correctamente el método de sustitución:</p>
-            <ol>
-                <li>Identificar una parte del integrando que se pueda sustituir por una variable simple (u)</li>
-                <li>Expresar dx en términos de du</li>
-                <li>Cambiar los límites de integración si es una integral definida</li>
-                <li>Resolver la integral en términos de u</li>
-                <li>Sustituir nuevamente la expresión original por u</li>
-            </ol>
-            
-            <h3>Casos de Aplicación</h3>
-            <ul>
-                <li>Integrales que contienen funciones compuestas</li>
-                <li>Integrales con expresiones algebraicas complicadas</li>
-                <li>Integrales trigonométricas</li>
-                <li>Integrales exponenciales</li>
-            </ul>
-        </section>
-
-        <section id="ejemplos" class="card">
-            <h2><i class="fas fa-calculator"></i> Ejemplos Prácticos</h2>
-            
-            <div class="example">
-                <h3>Ejemplo 1: Integral Simple</h3>
-                <p>Calcular ∫2x(x²+1)³ dx</p>
-                <p><strong>Solución:</strong></p>
-                <ol>
-                    <li>Hacemos u = x² + 1</li>
-                    <li>Entonces du = 2x dx</li>
-                    <li>La integral se convierte en ∫u³ du = u⁴/4 + C</li>
-                    <li>Sustituyendo de vuelta: (x²+1)⁴/4 + C</li>
-                </ol>
-            </div>
-            
-            <div class="example">
-                <h3>Ejemplo 2: Integral Trigonométrica</h3>
-                <p>Calcular ∫sin(x)cos(x) dx</p>
-                <p><strong>Solución:</strong></p>
-                <ol>
-                    <li>Hacemos u = sin(x)</li>
-                    <li>Entonces du = cos(x) dx</li>
-                    <li>La integral se convierte en ∫u du = u²/2 + C</li>
-                    <li>Sustituyendo de vuelta: sin²(x)/2 + C</li>
-                </ol>
+    <main class="main-content container">
+        <section id="introduccion" class="content-card">
+            <h2 class="section-title"><i class="fas fa-info-circle section-icon"></i> Introducción al Cambio de Variable</h2>
+            <div class="text-box">
+                <p>El método de cambio de variable, también conocido como sustitución, es una técnica fundamental en cálculo integral que nos permite transformar integrales complejas en formas más simples que sabemos resolver. Esta técnica es análoga a la regla de la cadena para derivación y es especialmente útil cuando tenemos funciones compuestas en el integrando.</p>
+                <p>El cambio de variable es una de las herramientas más versátiles en el cálculo integral, permitiendo resolver problemas que de otra manera serían extremadamente difíciles o imposibles de abordar directamente.</p>
             </div>
         </section>
 
-        <section id="video" class="card">
-            <h2><i class="fas fa-video"></i> Video Explicativo</h2>
-            <div class="video-container">
-                
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/SUJQ0LxZxUY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="video-description">En este video explicamos paso a paso cómo aplicar el método de cambio de variable con varios ejemplos prácticos.</p>
-            </div>
-        </section>
-
-        <section id="foro" class="card">
-            <h2><i class="fas fa-comments"></i> Foro de Discusión</h2>
-            <div class="forum">
-                <h3>¿Tienes dudas sobre cambio de variable?</h3>
-                <p>Participa en nuestro foro y comparte tus preguntas o soluciones.</p>
-                
-                <div class="comment">
-                    <h4>Usuario: Matemático23</h4>
-                    <p>¿Cómo saber cuál es la mejor sustitución para hacer en una integral compleja?</p>
-                    <p class="comment-date">Publicado el 12/05/2023</p>
+        <section id="explicacion" class="content-card">
+            <h2 class="section-title"><i class="fas fa-book-open section-icon"></i> Explicación Detallada</h2>
+            <article class="explanation-article">
+                <h3 class="subsection-title">Concepto Matemático</h3>
+                <p>El cambio de variable se basa en el siguiente teorema fundamental:</p>
+                <div class="formula-box">
+                    <p class="math-formula">∫f(g(x))g'(x)dx = ∫f(u)du donde u = g(x)</p>
                 </div>
-                
-                <div class="comment">
-                    <h4>Usuario: CalculoPro</h4>
-                    <p>Generalmente busco partes del integrando cuya derivada también aparezca. Con práctica se desarrolla intuición para elegir buenas sustituciones.</p>
-                    <p class="comment-date">Publicado el 13/05/2023</p>
+                <p>Para aplicar correctamente el método de sustitución, sigue estos pasos:</p>
+                <ol class="step-list">
+                    <li class="step-item">Identificar una parte del integrando que se pueda sustituir por una variable simple (u)</li>
+                    <li class="step-item">Expresar dx en términos de du</li>
+                    <li class="step-item">Cambiar los límites de integración si es una integral definida</li>
+                    <li class="step-item">Resolver la integral en términos de u</li>
+                    <li class="step-item">Sustituir nuevamente la expresión original por u</li>
+                </ol>
+            </article>
+            
+            <article class="application-article">
+                <h3 class="subsection-title">Casos de Aplicación</h3>
+                <div class="application-cards">
+                    <div class="application-card">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M19,19H5V5h14V19z"/>
+                                <path fill="currentColor" d="M7,12h2v5H7V12z M15,7h2v10h-2V7z M11,14h2v3h-2V14z M11,10h2v2h-2V10z"/>
+                            </svg>
+                        </div>
+                        <h4 class="app-title">Funciones Compuestas</h4>
+                        <p class="app-desc">Integrales que contienen funciones anidadas</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8S16.41,20,12,20z"/>
+                                <path fill="currentColor" d="M7.1,10.18c0.26,0.56,0.39,1.16,0.4,1.8c0.01,0.63-0.13,1.25-0.4,1.8l1.51,0.38c0.35-0.76,0.53-1.58,0.52-2.37c0-0.8-0.19-1.59-0.54-2.37L7.1,10.18z"/>
+                                <path fill="currentColor" d="M13.33,7.33c0.78,1.57,1.18,3.14,1.18,4.64c0,1.51-0.4,3.09-1.18,4.69l1.49,0.37c0.88-1.81,1.33-3.61,1.33-5.38c0-1.74-0.45-3.53-1.33-5.29L13.33,7.33z"/>
+                            </svg>
+                        </div>
+                        <h4 class="app-title">Expresiones Algebraicas</h4>
+                        <p class="app-desc">Integrales con polinomios complejos</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8S16.41,20,12,20z"/>
+                                <path fill="currentColor" d="M16.5,12c0,0.83-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5s0.67-1.5,1.5-1.5S16.5,11.17,16.5,12z M7.5,12c0,0.83-0.67,1.5-1.5,1.5S4.5,12.83,4.5,12S5.17,10.5,6,10.5S7.5,11.17,7.5,12z M12,15.5c-2.33,0-4.31-1.46-5.11-3.5h10.22C16.31,14.04,14.33,15.5,12,15.5z"/>
+                            </svg>
+                        </div>
+                        <h4 class="app-title">Funciones Trigonométricas</h4>
+                        <p class="app-desc">Integrales con senos, cosenos y tangentes</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M19,19H5V5h14V19z"/>
+                                <path fill="currentColor" d="M12,18c3.31,0,6-2.69,6-6s-2.69-6-6-6s-6,2.69-6,6S8.69,18,12,18z M12,8c2.21,0,4,1.79,4,4s-1.79,4-4,4s-4-1.79-4-4S9.79,8,12,8z"/>
+                                <path fill="currentColor" d="M12.31,11.14l1.34-0.72l0.72,1.34l-1.34,0.72L12.31,11.14z M11.14,12.31l-0.72-1.34l-1.34,0.72l0.72,1.34L11.14,12.31z"/>
+                            </svg>
+                        </div>
+                        <h4 class="app-title">Funciones Exponenciales</h4>
+                        <p class="app-desc">Integrales con e^x y funciones logarítmicas</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M19,19H5V5h14V19z"/>
+                                <path fill="currentColor" d="M12,10c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S10.9,10,12,10z M12,6c1.1,0,2,0.9,2,2s-0.9,2-2,2s-2-0.9-2-2S10.9,6,12,6z"/>
+                                <path fill="currentColor" d="M19,15h-2v2h2V15z M15,15h-2v2h2V15z M7,15H5v2h2V15z M11,15H9v2h2V15z"/>
+                            </svg>
+                        </div>
+                        <h4 class="app-title">Raíces Cuadradas</h4>
+                        <p class="app-desc">Integrales con expresiones radicales</p>
+                    </div>
                 </div>
+            </article>
+        </section>
+
+        <section id="ejemplos" class="content-card">
+            <h2 class="section-title"><i class="fas fa-calculator section-icon"></i> Ejemplos Prácticos</h2>
+            
+            <article class="example-article">
+                <h3 class="example-title">Ejemplo 1: Integral Polinómica</h3>
+                <p class="problem-statement">Calcular ∫2x(x²+1)³ dx</p>
+                <div class="solution-box">
+                    <h4 class="solution-title">Solución:</h4>
+                    <ol class="solution-steps">
+                        <li>Hacemos u = x² + 1</li>
+                        <li>Entonces du = 2x dx</li>
+                        <li>La integral se convierte en ∫u³ du = u⁴/4 + C</li>
+                        <li>Sustituyendo de vuelta: (x²+1)⁴/4 + C</li>
+                    </ol>
+                </div>
+            </article>
+            
+            <article class="example-article">
+                <h3 class="example-title">Ejemplo 2: Integral Trigonométrica</h3>
+                <p class="problem-statement">Calcular ∫sin(x)cos(x) dx</p>
+                <div class="solution-box">
+                    <h4 class="solution-title">Solución:</h4>
+                    <ol class="solution-steps">
+                        <li>Hacemos u = sin(x)</li>
+                        <li>Entonces du = cos(x) dx</li>
+                        <li>La integral se convierte en ∫u du = u²/2 + C</li>
+                        <li>Sustituyendo de vuelta: sin²(x)/2 + C</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="example-article">
+                <h3 class="example-title">Ejemplo 3: Integral Exponencial</h3>
+                <p class="problem-statement">Calcular ∫e^(3x+2) dx</p>
+                <div class="solution-box">
+                    <h4 class="solution-title">Solución:</h4>
+                    <ol class="solution-steps">
+                        <li>Hacemos u = 3x + 2</li>
+                        <li>Entonces du = 3 dx ⇒ dx = du/3</li>
+                        <li>La integral se convierte en ∫e^u (du/3) = (1/3)e^u + C</li>
+                        <li>Sustituyendo de vuelta: (1/3)e^(3x+2) + C</li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+
+        <section id="video" class="content-card">
+            <h2 class="section-title"><i class="fas fa-video section-icon"></i> Video Explicativo</h2>
+            <div class="video-responsive-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/UZyG4jCBMgU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video explicativo sobre cambio de variable en integrales"></iframe>
+            </div>
+            <div class="video-description-box">
+                <p class="video-description">En este video explicamos paso a paso cómo aplicar el método de cambio de variable con varios ejemplos prácticos de diferentes niveles de dificultad.</p>
+                <p class="video-duration"><i class="far fa-clock"></i> ???</p>
+            </div>
+        </section>
+
+        <section id="foro" class="content-card">
+            <h2 class="section-title"><i class="fas fa-comments section-icon"></i> Foro de Discusión</h2>
+            <div class="forum-container">
+                <h3 class="forum-question">¿Tienes dudas sobre cambio de variable?</h3>
+                <p class="forum-invitation">Participa en nuestro foro y comparte tus preguntas o soluciones con otros estudiantes.</p>
                 
-                <form class="comment-form">
-                    <h3>Añade tu comentario</h3>
+                <form class="comment-form" id="commentForm">
+                    <h3 class="form-title">Añade tu comentario</h3>
                     <div class="form-group">
-                        <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="userName" class="form-label">Nombre:</label>
+                        <input type="text" id="userName" class="form-input" placeholder="Escribe tu nombre..." name="userName" required>
                     </div>
                     <div class="form-group">
-                        <label for="comment">Comentario:</label>
-                        <textarea id="comment" name="comment" rows="4" required></textarea>
+                        <label for="userEmail" class="form-label">Email (opcional):</label>
+                        <input type="email" id="userEmail" class="form-input" placeholder="tu@email.com" name="userEmail">
                     </div>
-                    <button type="submit">Enviar</button>
+                    <div class="form-group">
+                        <label for="userComment" class="form-label">Comentario:</label>
+                        <textarea id="userComment" class="form-textarea" placeholder="Escribe tu comentario aquí..." name="userComment" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">Enviar Comentario</button>
+                        <button type="reset" class="reset-button">Limpiar</button>
+                    </div>
                 </form>
+
+                <div class="comments-section">
+                    <h4 class="comments-title">Comentarios Recientes</h4>
+                    <div class="comment-placeholder">
+                        <p>Aquí se mostrarán los comentarios de los usuarios.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="fuentes" class="card">
-            <h2><i class="fas fa-link"></i> Fuentes y Referencias</h2>
-            <ul class="references">
-                <li>Stewart, J. (2015). <em>Cálculo: Trascendentes tempranas</em>. Cengage Learning.</li>
-                <li>Thomas, G. B., & Finney, R. L. (2005). <em>Cálculo una variable</em>. Pearson Educación.</li>
-                <li>Khan Academy. (2021). <em>Integración por sustitución</em>. 
-                <li>MIT OpenCourseWare. (2020). <em>Single Variable Calculus</em>. 
-                <li>Weisstein, Eric W. <em>Integration by Substitution</em>. MathWorld. 
+        <section id="fuentes" class="content-card">
+            <h2 class="section-title"><i class="fas fa-link section-icon"></i> Fuentes y Referencias</h2>
+            <ul class="references-list">
+                <li class="reference-item"><i class="fas fa-book reference-icon"></i> Stewart, J. (2015). <em>Cálculo: Trascendentes tempranas</em>. Cengage Learning.</li>
+                <li class="reference-item"><i class="fas fa-book reference-icon"></i> Thomas, G. B., & Finney, R. L. (2005). <em>Cálculo una variable</em>. Pearson Educación.</li>
+                <li class="reference-item"><i class="fas fa-globe reference-icon"></i> <a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new" target="_blank" rel="noopener noreferrer" class="reference-link">Khan Academy. (2021). Integración por sustitución</a></li>
+                <li class="reference-item"><i class="fas fa-university reference-icon"></i> <a href="https://ocw.mit.edu/courses/mathematics/18-01sc-single-variable-calculus-fall-2010/" target="_blank" rel="noopener noreferrer" class="reference-link">MIT OpenCourseWare. (2020). Single Variable Calculus</a></li>
+                <li class="reference-item"><i class="fas fa-file-alt reference-icon"></i> <a href="https://mathworld.wolfram.com/IntegrationbySubstitution.html" target="_blank" rel="noopener noreferrer" class="reference-link">Weisstein, Eric W. Integration by Substitution. MathWorld</a></li>
             </ul>
         </section>
-        <div/>
     </main>
 
-    <>
-        <div class="container2">
-            <p>Proyecto sobre Cambio de Variable en Cálculo Integral</p>
-            <p>&copy; 2025 - Todos los derechos reservados</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-text">Proyecto educativo sobre Cambio de Variable en Cálculo Integral</p>
+                    <p class="footer-copyright">&copy; 2025 - Todos los derechos reservados</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Términos de uso</a>
+                    <a href="#" class="footer-link">Política de privacidad</a>
+                    <a href="#" class="footer-link">Contacto</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
             </div>
         </div>
-        </div>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
