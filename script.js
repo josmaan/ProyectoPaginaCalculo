@@ -1,88 +1,146 @@
-// Efecto de cambio de color al pasar el mouse sobre un botón
 document.addEventListener("DOMContentLoaded", () => {
-    const button = document.querySelector("button");
-
-    if (button) {
-        button.addEventListener("mouseover", () => {
-            button.style.backgroundColor = "lightblue";
-        });
-
-        button.addEventListener("mouseout", () => {
-            button.style.backgroundColor = "";
-        });
-    }
-
-    // Efecto de desvanecimiento para un elemento de texto
-    const fadeText = document.querySelector(".fade-text");
-
-    if (fadeText) {
-        fadeText.style.opacity = 1;
-
+    // efectos de sombra y color en botones
+    const initButtonHoverEffects = () => {
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach(button => {
+        button.addEventListener("mouseenter", () => button.classList.add("hovered"));
+        button.addEventListener("mouseleave", () => button.classList.remove("hovered"));
+      });
+    };
+  
+    // desvanecimiento de texto
+    const initTextFadeEffect = () => {
+      const fadeElements = document.querySelectorAll(".fade-text");
+      fadeElements.forEach(el => {
+        el.style.opacity = 1;
+        let isVisible = true;
+        
         setInterval(() => {
-            fadeText.style.transition = "opacity 1s";
-            fadeText.style.opacity = fadeText.style.opacity == 1 ? 0 : 1;
+          el.style.transition = "opacity 1s ease-in-out";
+          isVisible = !isVisible;
+          el.style.opacity = isVisible ? 1 : 0;
         }, 2000);
-    }
-
-    // Efecto de escala al pasar el mouse sobre el h1
-    const header = document.querySelector("h1");
-
-    if (header) {
-        header.style.animation = "permanent-scale 3s infinite alternate, color-change 5s infinite alternate";
-    }
-});
-
-// Agregar estilos para las animaciones permanentes
-const style = document.createElement("style");
-style.textContent = `
-    @keyframes permanent-scale {
-        0% {
-            transform: scale(1);
+      });
+    };
+  
+    // animaciones de encabezados
+    const initHeaderAnimations = () => {
+      const headers = document.querySelectorAll("h1");
+      headers.forEach(header => {
+        header.style.animation = 
+          "permanent-scale 3s infinite alternate, color-change 5s infinite alternate";
+      });
+    };
+  
+    // ajuste automático de altura de textareas
+    const initAutoResizeTextareas = () => {
+      const textareas = document.querySelectorAll("textarea");
+      textareas.forEach(textarea => {
+        textarea.addEventListener("input", () => {
+          textarea.style.height = "auto";
+          textarea.style.height = `${textarea.scrollHeight}px`;
+        });
+        // lanza el evento input para ajustar la altura al cargar
+        textarea.dispatchEvent(new Event("input"));
+      });
+    };
+  
+   // scroll suave y efectos de desplazamiento
+   
+const initScrollEffects = () => {
+    const nav = document.querySelector(".container");
+    if (!nav) return;
+  
+    let lastScrollY = 0;
+    const onScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== lastScrollY) {
+        nav.classList.toggle("scrolled", isScrolled);
+        lastScrollY = isScrolled;
+      }
+    };
+  
+    window.addEventListener("scroll", debounce(onScroll, 100)); // Usar debounce para optimizar
+  };
+  
+  // funcion de retardo para optimizar el scroll
+  const debounce = (func, wait) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), wait);
+    };
+  };
+  
+    // Resaltar enlace activo
+    const initActiveLinkHighlight = () => {
+      const links = document.querySelectorAll(".container a");
+      links.forEach(link => {
+        link.addEventListener("click", function(e) {
+          // se previene el comportamiento por defecto solo si es un enlace interno
+          if (this.getAttribute("href").startsWith("#")) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+          
+          links.forEach(l => l.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+    };
+  
+    // estilos de animación para el fondo y el texto
+    const addAnimationStyles = () => {
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes background-pulse {
+          0% { background-color: var(--primary-100); }
+          50% { background-color: var(--primary-300); }
+          100% { background-color: var(--primary-500); }
         }
-        100% {
-            transform: scale(1.2);
+        
+        @keyframes permanent-scale {
+          0% { transform: scale(1); }
+          100% { transform: scale(1.05); }
         }
-    }
-
-    @keyframes color-change {
-        0% {
-            color: lightblue;
+        
+        @keyframes color-change {
+          0% { color: var(--primary-900); }
+          50% { color: var(--primary-700); }
+          100% { color: var(--primary-500); }
         }
-        50% {
-            color: dodgerblue;
+        
+        @keyframes rotate-effect {
+          0% { transform: rotate(-2deg); }
+          100% { transform: rotate(2deg); }
         }
-        100% {
-            color: darkblue;
+        
+        h1 {
+          animation: permanent-scale 3s infinite alternate, 
+                    color-change 5s infinite alternate, 
+                    rotate-effect 10s infinite linear;
         }
-    }
-
-    @keyframes rotate-effect {
-        0% {
-            transform: rotate(0deg);
+        
+        body {
+          animation: background-pulse 15s infinite alternate;
         }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes background-pulse {
-        0% {
-            background-color: lightblue;
-        }
-        50% {
-            background-color: skyblue;
-        }
-        100% {
-            background-color: steelblue;
-        }
-    }
-
-    h1 {
-        animation: permanent-scale 3s infinite alternate, color-change 5s infinite alternate, rotate-effect 10s infinite linear;
-    }
-
-    body {
-        animation: background-pulse 6s infinite alternate;
-    }
-`;
-document.head.appendChild(style);
+      `;
+      document.head.appendChild(style);
+    };
+  
+    // inicializar todas las funciones
+    const initAll = () => {
+      initButtonHoverEffects();
+      initTextFadeEffect();
+      initHeaderAnimations();
+      initAutoResizeTextareas();
+      initScrollEffects();
+      initActiveLinkHighlight();
+      addAnimationStyles();
+    };
+  
+    initAll();
+  });
