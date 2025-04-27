@@ -160,6 +160,7 @@ header {
   list-style: none; /* Elimina viñetas */
   padding: 1rem 0; /* Espaciado vertical */
   overflow-x: auto; /* Permite scroll horizontal si es necesario */
+  color:#1362d1; /* Color de texto azul oscuro */
 }
 
 /* Oculta scrollbar en Chrome/Safari */
@@ -170,6 +171,7 @@ header {
 /* Elementos de navegación que no se encogen */
 .nav-item {
   flex-shrink: 0;
+  color:#4299e1; /* Color de texto azul medio */
 }
 
 /* Estilos de los enlaces de navegación */
@@ -179,7 +181,7 @@ header {
   gap: 0.5rem; /* Espacio entre icono y texto */
   padding: 0.75rem 1.25rem; /* Espaciado interno */
   border-radius: var(--radius-full); /* Completamente redondeado */
-  color: var(--neutral-700); /* Color de texto */
+  color: blue; /* Color de texto azul */
   text-decoration: none; /* Sin subrayado */
   font-weight: 500; /* Grosor de fuente */
   transition: var(--transition); /* Transición suave */
@@ -190,7 +192,7 @@ header {
 .nav-link:hover,
 .nav-link:focus {
   color: var(--primary-500); /* Cambia color al azul medio */
-  background-color: rgba(66, 153, 225, 0.1); /* Fondo azul muy tenue */
+  background-color: rgba(53, 155, 238, 0.1); /* Fondo azul muy tenue */
 }
 
 /* Estilos para iconos de navegación */
@@ -327,7 +329,7 @@ header {
 
 /* Jerarquía de encabezados */
 h1 {
-  font-family: 'Comfortaa', cursive;
+  font-family: "Tagesschrift", system-ui;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary-900);
@@ -391,6 +393,7 @@ p {
 .math-formula {
   font-family: 'Courier New', monospace;
   font-weight: bold; /* Negrita para mejor legibilidad */
+  color:black; /* Color azul */
 }
 
 /* Lista de pasos */
@@ -467,7 +470,7 @@ p {
 
 /* Enunciado del problema */
 .problem-statement {
-  font-family: 'Courier New', monospace; /* Fuente monoespaciada */
+  font-family:'Nunito Sans', system-ui, -apple-system, sans-serif;   /* Fuente monoespaciada */
   background-color: var(--neutral-100); /* Fondo gris muy claro */
   padding: 1rem; /* Espaciado interno */
   border-radius: var(--radius-md); /* Esquinas redondeadas */
@@ -607,7 +610,7 @@ p {
 
 /* Campos de entrada y textarea */
 .form-input,
-.form-textarea {
+.form-textarea,.answerr-1 {
   width: 100%; /* Ancho completo */
   padding: 0.75rem 1rem; /* Espaciado interno */
   border: 1px solid var(--neutral-300); /* Borde sutil */
@@ -819,4 +822,14 @@ p {
   .application-list {
     grid-template-columns: 1fr;
   }
+  
+  
+}
+.equacion{
+  font-size: 1.5rem; /* Aumenta el tamaño de la letra */
+}
+
+.ayuda p{
+  font-family:  'Nunito Sans', system-ui, -apple-system, sans-serif; 
+  font-weight: lighter;
 }

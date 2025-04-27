@@ -144,3 +144,66 @@ const initScrollEffects = () => {
   
     initAll();
   });
+   
+  // Funciones para validar respuestas y mostrar explicaciones 
+  function validarRespuesta(){
+    const seleccion= document.querySelector('input[name="answer1"]:checked');
+    const respuestaCorrecta='verdadero';
+    const mensajeDiv= document.getElementById('mensajito');
+    if(seleccion){
+      if(seleccion.value===respuestaCorrecta){
+        mensajeDiv.textContent='Correcto!';
+        mensajeDiv.style.color='green';
+      }else{
+        mensajeDiv.textContent='Incorrecto!';
+        mensajeDiv.style.color='red';
+      }
+
+      const respuesta=document.getElementById('respuesta');
+      
+       document.getElementById('verRespuestaCorrecta').style.display='inline-block';
+      
+    }
+
+    
+  } 
+  function mostrarExplicacion(){
+    const explicacionDiv = document.getElementById('explicacionn')
+    explicacionDiv.style.display='block';
+    
+
+      
+      
+      
+    }
+  
+  function validarRespuesta2(){
+    const seleccion= document.querySelector('input[name="answer2"]:checked');
+    const respuestaCorrecta='verdadero';
+    const mensajeDiv= document.getElementById('mensaje2');
+    if(seleccion){
+      if(seleccion.value===respuestaCorrecta){
+        mensajeDiv.textContent='Correcto!';
+        mensajeDiv.style.color='green';
+      }else{
+        mensajeDiv.textContent='Incorrecto!';
+        mensajeDiv.style.color='red';
+      }
+
+      const respuesta=document.getElementById('respuesta2');
+      
+       document.getElementById('verRespuestaCorrecta2').style.display='inline-block';
+      
+    } }
+
+
+    function mostrarRespuesta(){
+      const explicacion2Div= document.getElementById('explicacionn2');
+      explicacion2Div.style.display='block';
+    }
+
+
+    
+
+  
+

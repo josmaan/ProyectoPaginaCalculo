@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
 <body>
     <header>
         <div class="container header-container">
@@ -20,7 +22,7 @@
             </div>
             <hr class="header-divider">
             <div class="logo-container">
-                <img src="images/math-logo.png" alt="Logo de Matemáticas Avanzadas" class="logo-img" width="120">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-dhRKmEnPSWsHOKNCeD5mIQO750n7GuvPlg&s" alt="Logo de Matemáticas Avanzadas" class="logo-img" width="150">
             </div>
         </div>
     </header>
@@ -53,7 +55,8 @@
                 <h3 class="subsection-title">Concepto Matemático</h3>
                 <p>El cambio de variable se basa en el siguiente teorema fundamental:</p>
                 <div class="formula-box">
-                    <p class="math-formula">∫f(g(x))g'(x)dx = ∫f(u)du donde u = g(x)</p>
+                <p class="math-formula">\[ \int f\; (g(\;x\;) )\; g'\; (x)\; dx = \int f\;(u) \;du \] donde \[u = g\;(x) \]</p>
+         
                 </div>
                 <p>Para aplicar correctamente el método de sustitución, sigue estos pasos:</p>
                 <ol class="step-list">
@@ -134,49 +137,49 @@
             
             <article class="example-article">
                 <h3 class="example-title">Ejemplo 1: Integral Polinómica</h3>
-                <p class="problem-statement">Calcular ∫2x(x²+1)³ dx</p>
+                <p class="problem-statement">Calcular \[ \int 2x(x²+1)³ dx \]</p>
                 <div class="solution-box">
                     <h4 class="solution-title">Solución:</h4>
                     <ol class="solution-steps">
-                        <li>Hacemos u = x² + 1</li>
-                        <li>Entonces du = 2x dx</li>
-                        <li>La integral se convierte en ∫u³ du = u⁴/4 + C</li>
-                        <li>Sustituyendo de vuelta: (x²+1)⁴/4 + C</li>
+                        <li>Hacemos  \(u = x² + 1'\)</li>
+                        <li>Entonces \(du = 2x \, dx\)</li>
+                        <li>La integral se convierte en \(\int u³\, du =  \frac{u⁴}{4} + C\)</li>
+                        <li>Sustituyendo de vuelta: \( \frac {1}{4} (x²+1)⁴ + C\)</li>
                     </ol>
                 </div>
             </article>
             
             <article class="example-article">
                 <h3 class="example-title">Ejemplo 2: Integral Trigonométrica</h3>
-                <p class="problem-statement">Calcular ∫sin(x)cos(x) dx</p>
+                <p class="problem-statement">Calcular \[\int sin(x)cos(x) dx\]</p>
                 <div class="solution-box">
                     <h4 class="solution-title">Solución:</h4>
                     <ol class="solution-steps">
-                        <li>Hacemos u = sin(x)</li>
-                        <li>Entonces du = cos(x) dx</li>
-                        <li>La integral se convierte en ∫u du = u²/2 + C</li>
-                        <li>Sustituyendo de vuelta: sin²(x)/2 + C</li>
+                        <li>Hacemos \(u = sin(x)\)</li>
+                        <li>Entonces \(du = cos(x) dx\)</li>
+                    <li>La integral se convierte en \(\int u \, du =  \frac{u²}{2} + C\)</li>
+                        <li>Sustituyendo de vuelta: \( \frac{1}{2} sin²(x) + C\)</li>
                     </ol>
                 </div>
             </article>
 
             <article class="example-article">
                 <h3 class="example-title">Ejemplo 3: Integral Exponencial</h3>
-                <p class="problem-statement">Calcular ∫e^(3x+2) dx</p>
+                <p class="problem-statement">Calcular \[ \int e\,^{3x+2} \,dx\] </p>
                 <div class="solution-box">
                     <h4 class="solution-title">Solución:</h4>
                     <ol class="solution-steps">
-                        <li>Hacemos u = 3x + 2</li>
-                        <li>Entonces du = 3 dx ⇒ dx = du/3</li>
-                        <li>La integral se convierte en ∫e^u (du/3) = (1/3)e^u + C</li>
-                        <li>Sustituyendo de vuelta: (1/3)e^(3x+2) + C</li>
+                        <li>Hacemos \( u = 3x + 2\)</li>
+                        <li>Entonces \( du = 3 dx ⇒ dx = \frac{du}{3} \)</li>
+                        <li>La integral se convierte en \( \int e^u \frac{du}{3}  = \frac{1}{3}e^u + C\)</li>
+                        <li>Sustituyendo de vuelta: \( \frac{1}{3}e\,^{3x+2} \ + C\)</li>
                     </ol>
                 </div>
             </article>
         </section>
 
         <section id="video" class="content-card">
-            <h2 class="section-title"><i class="fas fa-video section-icon"></i> Video Explicativo</h2>
+            <h2 class="section-title"><i class="fas fa-calculator section-icon"></i> Video Explicativo</h2>
             <div class="video-responsive-container">
                 <iframe class="video-embed" src="https://www.youtube.com/embed/UZyG4jCBMgU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video explicativo sobre cambio de variable en integrales"></iframe>
             </div>
@@ -185,6 +188,81 @@
                 <p class="video-duration"><i class="far fa-clock"></i> ???</p>
             </div>
         </section>
+
+             <section id="ejercicios" class="content-card">
+            <h2 class="section-title"> <i class="fas fa-university section-icon"></i> Ejercicios para resolver </h2>
+            <div class="problem-statement">
+                <p>1. Calcular \[ \int \frac{x}{(1+x^2)^2}\, dx \]</p>
+                <label for="answer1" class="labell">Respuesta:</label> <br>
+
+
+                <input type="radio"  name="answer1" value="verdadero" > \(-\frac{1}{2(1+x²) }+ C \)<br><br>
+                <input type="radio" name="answer1" value="falso"> \(-\frac{1}{(1+x^2)}+C\)<br><br>
+                <input type="radio" name="answer1" value="falso"> \(\frac{1}{2(1+x²) }+ C\)<br><br>
+                <input type="radio" name="answer1" value="falso"> \( \frac{x^2}{(1+x^2)}+C\)<br>
+ <br>   
+<br>
+               
+                 <button type="button" class="submit-button" onclick="validarRespuesta()">Validar Respuesta</button>
+                 <button id="verRespuestaCorrecta" class="submit-button" style="display:none;" onclick="mostrarExplicacion()">Ver Respuesta y explicacion</button>
+                 <div id="explicacionn" class="ayuda"  style="display:none;"> 
+                    <br>
+                    <p>La respuesta correcta es: \[- \frac{1}{2(1+x^2)} + C\]</p>
+                    <p>Esta funcion parece compleja, pero al aplicar el cambio de variable, se vuelve más manejable,porque la derivada
+                        de /(1+x^2) \ contiene /(x)\, que es justo el numerador de nuestra integral.Así al hacer este cambio, la integral se simplificara mucho><br>
+                       <br><br>1. Elegimos el cambio de variable:<br>
+                          \(u = 1+x²\) <br><br>
+                        2. Derivamos u con respecto a x <br>
+                        \(du = 2x \, dx\) <br><br>
+                        3. Despejamos  x dx: <br>
+                        \(x\, dx = \frac{du}{2}\) <br><br>
+                        4. Sustituimos en la integral: <br>
+                        \(\int \frac{x}{(1+x^2)^2}\, dx = \int \frac{1}{u²} \cdot \frac{du}{2} =
+                        \frac{1}{2}\int u^{-2} = \frac{1}{2} \frac{u^{-1}}{-1} = -\frac{u^{-1}}{2} +C =  -\frac{1}{2u}+ C \)  <br><br>
+                        5. Sustituimos u por su valor original: <br>     
+                        \(-\frac{1}{2(1+x²) }+ C\) <br><br>
+                    </p>
+                </div>
+                 <br>
+                 <br>   
+                 <div id="mensajito"></div>   
+            </div>
+            <div class="problem-statement">
+                <p>2. Calcular \[ \int tan (x) sec ^3 (x) dx \]</p>
+                <label for="answer2" class="label2">Respuesta:</label> <br>
+
+
+                <input type="radio"  name="answer2" value="falso" > \(-\frac{1}{3} sec^3 (x)+ C \)<br><br>
+                <input type="radio" name="answer2" value="falso"> \(sec (x) tan (x) +C\)<br><br>
+                <input type="radio" name="answer2" value="verdadero"> \(\frac{1}{3} sec^3(x) + C\)<br><br>
+                <input type="radio" name="answer2" value="falso"> \( \frac{1}{2}sec^2(x)+C\)<br>
+                <button type="button" class="submit-button" onclick="validarRespuesta2()">Validar Respuesta</button>
+                <button id="verRespuestaCorrecta2" class="submit-button" style="display:none;" onclick="mostrarRespuesta()">Ver Respuesta y explicacion</button>
+                <div id="explicacionn2" class="ayuda"  style="display:none">
+                <br><br>
+                <p>La respuesta correcta es:  <br> </p>
+                \(\frac{1}{3} sec^3\,(x) + C\)
+                <br><br>
+                <p>Esta es una funcion trigonometrica que podemos descomponer transformandola en: 
+                <br><br> \( tan (x)\: sec (x)\; sec^2(x)\; dx\) <br> <br> 
+                1. Elegimos el cambio de variable:<br>
+                \(u = sec (x)\) <br><br>
+                2.  Derivamos u con respecto a x <br><br>
+                \(du = sec (x)\;tan (x) dx\) <br><br>
+                3. Sustituimos en la integral: <br><br>
+                \( \int tan (x)\; sec ^3 (x)\;dx = \int u^2\, du\) <br><br>
+                4. Resolvemos la integral: <br><br> 
+                \( \int u^2\: du = \frac{1}{3} u^3 + C\) <br><br>
+                5. Sustituimos u por su valor original: <br><br>
+                \(\frac{1}{3} sec^3\,(x) + C\) <br><br>
+
+            </div> 
+                </p>
+
+                <div id="mensaje2"></div> 
+           
+
+        </section> 
 
         <section id="foro" class="content-card">
             <h2 class="section-title"><i class="fas fa-comments section-icon"></i> Foro de Discusión</h2>
@@ -245,13 +323,7 @@
                     <a href="#" class="footer-link">Política de privacidad</a>
                     <a href="#" class="footer-link">Contacto</a>
                 </div>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                </div>
+                
             </div>
         </div>
     </footer>
