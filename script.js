@@ -97,7 +97,7 @@ const initScrollEffects = () => {
       const style = document.createElement("style");
       style.textContent = `
         @keyframes background-pulse {
-          0% { background-color: var(--primary-100); }
+          0% { background-color: var(--primary-200); }
           50% { background-color: var(--primary-300); }
           100% { background-color: var(--primary-500); }
         }
@@ -108,9 +108,9 @@ const initScrollEffects = () => {
         }
         
         @keyframes color-change {
-          0% { color: var(--primary-900); }
-          50% { color: var(--primary-700); }
-          100% { color: var(--primary-500); }
+          0% { color:rgb(7, 63, 175); } /* Azul más vivo */
+          50% { color:rgb(23, 87, 184); } /* Azul más vivo */
+          100% { color:rgb(8, 50, 189); } /* Azul más vivo */
         }
         
         @keyframes rotate-effect {
@@ -120,8 +120,8 @@ const initScrollEffects = () => {
         
         h1 {
           animation: permanent-scale 3s infinite alternate, 
-                    color-change 5s infinite alternate, 
-                    rotate-effect 10s infinite linear;
+            color-change 5s infinite alternate, 
+            rotate-effect 10s infinite linear;
         }
         
         body {
