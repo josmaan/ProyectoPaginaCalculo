@@ -33,6 +33,7 @@
                 <li class="nav-item"><a href="#introduccion" class="nav-link"><i class="fas fa-home nav-icon"></i> Introducción</a></li>
                 <li class="nav-item"><a href="#explicacion" class="nav-link"><i class="fas fa-book nav-icon"></i> Explicación</a></li>
                 <li class="nav-item"><a href="#ejemplos" class="nav-link"><i class="fas fa-calculator nav-icon"></i> Ejemplos</a></li>
+                <li class="nav-item"><a href="#ejercicios" class="nav-link"><i class="fas fa-pencil-alt "></i> Ejercicios</a></li>
                 <li class="nav-item"><a href="#video" class="nav-link"><i class="fas fa-video nav-icon"></i> Video</a></li>
                 <li class="nav-item"><a href="#foro" class="nav-link"><i class="fas fa-comments nav-icon"></i> Foro</a></li>
                 <li class="nav-item"><a href="#fuentes" class="nav-link"><i class="fas fa-link nav-icon"></i> Fuentes</a></li>
@@ -193,13 +194,27 @@
             <h2 class="section-title"> <i class="fas fa-university section-icon"></i> Ejercicios para resolver </h2>
             <div class="problem-statement">
                 <p>1. Calcular \[ \int \frac{x}{(1+x^2)^2}\, dx \]</p>
-                <label for="answer1" class="labell">Respuesta:</label> <br>
+                <span class="labell">Respuesta:</span> <br>
 
-
-                <input type="radio"  name="answer1" value="verdadero" > \(-\frac{1}{2(1+x²) }+ C \)<br><br>
-                <input type="radio" name="answer1" value="falso"> \(-\frac{1}{(1+x^2)}+C\)<br><br>
-                <input type="radio" name="answer1" value="falso"> \(\frac{1}{2(1+x²) }+ C\)<br><br>
-                <input type="radio" name="answer1" value="falso"> \( \frac{x^2}{(1+x^2)}+C\)<br>
+                  <label>
+                    <input type="radio" name="answer1" value="verdadero">
+                    \(-\frac{1}{2(1+x²) }+ C \)
+                  </label><br><br>
+                  
+                  <label>
+                    <input type="radio" name="answer1" value="falso">
+                    \(-\frac{1}{(1+x^2)}+C\)
+                  </label><br><br>
+                  
+                  <label>
+                    <input type="radio" name="answer1" value="falso">
+                    \(\frac{1}{2(1+x²) }+ C\)
+                  </label><br><br>
+                  
+                  <label>
+                    <input type="radio" name="answer1" value="falso">
+                    \( \frac{x^2}{(1+x^2)}+C\)
+                  </label><br>
  <br>   
 <br>
                
@@ -209,7 +224,7 @@
                     <br>
                     <p>La respuesta correcta es: \[- \frac{1}{2(1+x^2)} + C\]</p>
                     <p>Esta funcion parece compleja, pero al aplicar el cambio de variable, se vuelve más manejable,porque la derivada
-                        de (\(1+x^2) \) contiene \( x \), que es justo el numerador de nuestra integral. Así al hacer este cambio, la integral se simplificara mucho<br>
+                        de /(1+x^2) \ contiene /(x)\, que es justo el numerador de nuestra integral.Así al hacer este cambio, la integral se simplificara mucho><br>
                        <br><br>1. Elegimos el cambio de variable:<br>
                           \(u = 1+x²\) <br><br>
                         2. Derivamos u con respecto a x <br>
@@ -229,13 +244,29 @@
             </div>
             <div class="problem-statement">
                 <p>2. Calcular \[ \int tan (x) sec ^3 (x) dx \]</p>
-                <label for="answer2" class="label2">Respuesta:</label> <br>
+                <span class="label2">Respuesta:</span> <br>
 
 
-                <input type="radio"  name="answer2" value="falso" > \(-\frac{1}{3} sec^3 (x)+ C \)<br><br>
-                <input type="radio" name="answer2" value="falso"> \(sec (x) tan (x) +C\)<br><br>
-                <input type="radio" name="answer2" value="verdadero"> \(\frac{1}{3} sec^3(x) + C\)<br><br>
-                <input type="radio" name="answer2" value="falso"> \( \frac{1}{2}sec^2(x)+C\)<br>
+                <label>
+                    <input type="radio" name="answer2" value="falso">
+                    \(-\frac{1}{3} \sec^3(x) + C\)
+                  </label><br><br>
+                  
+                  <label>
+                    <input type="radio" name="answer2" value="falso">
+                    \(\sec(x) \tan(x) + C\)
+                  </label><br><br>
+                  
+                  <label>
+                    <input type="radio" name="answer2" value="verdadero">
+                    \(\frac{1}{3} \sec^3(x) + C\)
+                  </label><br><br>
+                  
+                  <label>
+                    <input type="radio" name="answer2" value="falso">
+                    \(\frac{1}{2} \sec^2(x) + C\)
+                  </label><br>
+                  
                 <button type="button" class="submit-button" onclick="validarRespuesta2()">Validar Respuesta</button>
                 <button id="verRespuestaCorrecta2" class="submit-button" style="display:none;" onclick="mostrarRespuesta()">Ver Respuesta y explicacion</button>
                 <div id="explicacionn2" class="ayuda"  style="display:none">
