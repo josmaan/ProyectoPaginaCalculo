@@ -4,20 +4,23 @@
  * Inicialización de variables CSS
  */
  :root {
-  /* Colores primarios (azules) */
+  
+
   --primary-900: #1a365d;       /* Azul oscuro principal */
   --primary-700: #2a4365;       /* Variante oscura */
   --primary-500: #4299e1;       /* Azul medio - color de acento */
   --primary-300: #90cdf4;       /* Azul claro */
   --primary-100: #ebf8ff;       /* Azul muy claro - fondo */
+  --primary-100: #a2d4f0;       /* Azul muy claro - fondo */
   
   /* Colores neutrales (grises) */
   --neutral-900: #1a202c;       /* Texto principal */
+  --neutral-900: #2e4c86;       /* Texto principal */
   --neutral-700: #4a5568;       /* Texto secundario */
   --neutral-500: #718096;       /* Texto terciario */
   --neutral-300: #e2e8f0;       /* Bordes */
-  --neutral-100: #f7fafc;       /* Fondos claros */
-  
+
+
   /* Colores básicos */
   --white: #ffffff;
   --black: #000000;
@@ -35,8 +38,7 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   
   /* Transición estándar para efectos */
-  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);}
 
 /* 
  * =============================================
@@ -115,21 +117,8 @@ header {
   width: 80%; /* Ancho relativo */
 }
 
-/* Contenedor del logo */
-.logo-container {
-width: 100%; /* Ancho completo */
-  display: flex; /* Layout flexible */
-  justify-content: center; /* Centrado horizontal */
-  align-items: center; /* Centrado vertical */
-  margin-bottom: 1.5rem; /* Espaciado inferior */
-}
-.logo-container2 {
- width: 100%; /* Ancho completo */
-  display: flex; /* Layout flexible */
-  justify-content: center; /* Centrado horizontal */
-  align-items: center; /* Centrado vertical */
-  margin-bottom: 1.5rem; /* Espaciado inferior */
-}
+
+
 .logo-wrapper {
   display: flex;
   justify-content: space-between; /* o flex-start, flex-end, etc. */
@@ -892,3 +881,29 @@ input[type="radio"] {
   margin: 2%;
 }
 
+.logo-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50%;
+  
+  
+}
+
+.logo-img{
+  display: inline;
+  position: absolute;
+  right: 0;
+  top:4%;
+
+}
+.nombre{
+  display: inline;
+  padding: 5.5%;
+  font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+}
+
+
+  

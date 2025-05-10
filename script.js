@@ -97,9 +97,9 @@ const debounce = (func, wait) => {
     const style = document.createElement("style");
     style.textContent = `
       @keyframes background-pulse {
-        0% { background-color: var(--primary-100); }
-        50% { background-color: var(--primary-300); }
-        100% { background-color: var(--primary-500); }
+        0% { background-color:rgb(143, 190, 244); }
+        50% { background-color:rgb(108, 173, 252); }
+        100% { background-color:rgb(81, 162, 234); } 
       }
       
       @keyframes permanent-scale {
@@ -108,9 +108,9 @@ const debounce = (func, wait) => {
       }
       
       @keyframes color-change {
-        0% { color: var(--primary-900); }
-        50% { color: var(--primary-700); }
-        100% { color: var(--primary-500); }
+        0% { color: #60a5fa; } /* var(--primary-400) */
+        50% { color:rgb(113, 186, 246); } /* var(--primary-600) */
+        100% { color:rgb(72, 167, 236); } /* var(--primary-500) */
       }
       
       @keyframes rotate-effect {
