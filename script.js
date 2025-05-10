@@ -108,9 +108,8 @@ const debounce = (func, wait) => {
       }
       
       @keyframes color-change {
-        0% { color: #60a5fa; } /* var(--primary-400) */
-        50% { color:rgb(113, 186, 246); } /* var(--primary-600) */
-        100% { color:rgb(72, 167, 236); } /* var(--primary-500) */
+        0% { color: #1e3a8a; }   /* azul oscuro */
+        100% { color: #1e40af; }  /* ligeramente más claro */
       }
       
       @keyframes rotate-effect {
@@ -207,4 +206,3 @@ function validarRespuesta2(){
   }
 
   
-

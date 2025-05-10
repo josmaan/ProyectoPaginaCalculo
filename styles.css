@@ -79,9 +79,12 @@ body {
 
 /* Estilos específicos para el contenedor del encabezado */
 .header-container {
-  position: relative; /* Para posicionar elementos hijos relativamente */
-  padding: 2rem 0; /* Espaciado vertical */
-  text-align: center; /* Centrado de texto */
+ display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1rem;
+  padding-left: 0px;
+  gap: 1rem;
 }
 
 /* Contenedor principal del contenido */
@@ -105,7 +108,8 @@ header {
 
 /* Contenedor del título principal */
 .title-container {
-  margin-bottom: 1.5rem; /* Espaciado inferior */
+  text-align: center;
+  flex: 1;
 }
 
 /* Divisor decorativo en el encabezado */
@@ -880,30 +884,18 @@ input[type="radio"] {
   padding: 2%;
   margin: 2%;
 }
-
-.logo-img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  align-items: center;
-  margin-left: 50%;
-  
-  
-}
-
-.logo-img{
-  display: inline;
-  position: absolute;
-  right: 0;
-  top:4%;
-
-}
 .nombre{
   display: inline;
   padding: 5.5%;
   font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif;
 }
-
+.logo-left {
+  justify-self: start;
+  margin-left: -4rem;
+}
+.logo-right {
+  justify-self: right;
+  margin-right: -4rem;
+}
 
   
