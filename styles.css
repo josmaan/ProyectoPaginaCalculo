@@ -871,10 +871,11 @@ label {
   margin-bottom: 12px;
   font-size: 18px;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: var(--neutral-100); /* Fondo gris muy claro */
   padding: 8px 12px;
   border-radius: 8px;
   transition: background-color 0.3s;
+  
 }
 
 label:hover {
@@ -886,5 +887,8 @@ input[type="radio"] {
   transform: scale(1.3); /* hace el radio un poco más grande */
   cursor: pointer;
 }
-
+.solution-box{
+  padding: 2%;
+  margin: 2%;
+}
 
