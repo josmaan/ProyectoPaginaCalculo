@@ -108,8 +108,8 @@ const debounce = (func, wait) => {
       }
       
       @keyframes color-change {
-        0% { color: var(--primary-700); }
-        50% { color: var(--primary-800); }
+        0% { color: var(--primary-900); }
+        50% { color: var(--primary-700); }
         100% { color: var(--primary-500); }
       }
       

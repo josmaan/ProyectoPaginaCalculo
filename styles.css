@@ -9,10 +9,10 @@
   --primary-700: #2a4365;       /* Variante oscura */
   --primary-500: #4299e1;       /* Azul medio - color de acento */
   --primary-300: #90cdf4;       /* Azul claro */
-  --primary-100: #a2d4f0;       /* Azul muy claro - fondo */
+  --primary-100: #ebf8ff;       /* Azul muy claro - fondo */
   
   /* Colores neutrales (grises) */
-  --neutral-900: #2e4c86;       /* Texto principal */
+  --neutral-900: #1a202c;       /* Texto principal */
   --neutral-700: #4a5568;       /* Texto secundario */
   --neutral-500: #718096;       /* Texto terciario */
   --neutral-300: #e2e8f0;       /* Bordes */
@@ -51,7 +51,6 @@
   box-sizing: border-box; /* Modelo de caja más predecible */
 }
 
-
 /* estilo generales del cuerpo  */
 body {
   font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif; /* Fuente principal con fallbacks */
@@ -61,7 +60,6 @@ body {
   letter-spacing: 0.02em; /* Espaciado entre letras sutil */
   scroll-behavior: smooth; /* Desplazamiento suave al hacer scroll a anclas */
 }
-
 
 /* 
  * =============================================
@@ -76,8 +74,6 @@ body {
   margin: 0 auto; /* Centrado horizontal */
   padding: 0 1.5rem; /* Padding lateral para móviles */
 }
-
-
 
 /* Estilos específicos para el contenedor del encabezado */
 .header-container {
@@ -121,7 +117,24 @@ header {
 
 /* Contenedor del logo */
 .logo-container {
-  margin-top: 1rem; /* Espaciado superior */
+width: 100%; /* Ancho completo */
+  display: flex; /* Layout flexible */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+}
+.logo-container2 {
+ width: 100%; /* Ancho completo */
+  display: flex; /* Layout flexible */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+}
+.logo-wrapper {
+  display: flex;
+  justify-content: space-between; /* o flex-start, flex-end, etc. */
+  align-items: center;
+  gap: 250px;
 }
 
 /* Estilos de la imagen del logo */
@@ -164,7 +177,7 @@ header {
   list-style: none; /* Elimina viñetas */
   padding: 1rem 0; /* Espaciado vertical */
   overflow-x: auto; /* Permite scroll horizontal si es necesario */
-  color:#1362d1; /* Color de texto azul oscuro */
+  color:#8cb1e5; /* Color de texto azul oscuro */
 }
 
 /* Oculta scrollbar en Chrome/Safari */
@@ -332,8 +345,8 @@ header {
 
 
 /* Jerarquía de encabezados */
-h1 { font-family: "Oleo Script", system-ui;
-  
+h1 {
+  font-family: "Tagesschrift", system-ui;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary-900);
@@ -858,7 +871,7 @@ label {
   margin-bottom: 12px;
   font-size: 18px;
   cursor: pointer;
-  background-color: var(--neutral-100); /* Fondo gris muy claro */
+  background-color: #ffffff;
   padding: 8px 12px;
   border-radius: 8px;
   transition: background-color 0.3s;
@@ -874,15 +887,4 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-.logo-imgT{
-  position: absolute;
-  top: 3%;
-  right: 0;
 
-
-}
-
-.solution-box{
-  padding: 2%;
-  margin: 2%;
-}

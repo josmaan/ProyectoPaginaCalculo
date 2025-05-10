@@ -12,9 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+</head>
+<body>
     <header>
         <div class="container header-container">
             <div class="title-container">
@@ -22,11 +21,12 @@
                 <p class="subtitle">Una técnica fundamental para resolver integrales complejas</p>
             </div>
             <hr class="header-divider">
-            <div class="logo-container">
-                <img src="https://rinacional.tecnm.mx/retrieve/30d62c30-4688-4d8d-9d7e-7071ab4c02a5" alt="Logo de Matemáticas Avanzadas" class="logo-imgT" width="70">
+            <div class="logo-wrapper">
+            <div class="logo-container2">
+                <img src="Logo itch.png" alt="Logo Tec" class="logo-img">
             </div>
             <div class="logo-container">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-dhRKmEnPSWsHOKNCeD5mIQO750n7GuvPlg&s" alt="Logo de Matemáticas Avanzadas" class="logo-img" width="150">
+                <img src="logo tec.png" alt="Logo Tec" class="logo-img">
             </div>
         </div>
     </header>
@@ -189,11 +189,16 @@
   </h2>
 
   <div class="video-responsive-container">
-    <video class="video-embed" controls>
-      <source src="Video de calculo final.mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de video.
-    </video>
-  </div>
+  <iframe
+    class="video-embed"
+    src="https://www.youtube.com/embed/n2zdFMPqJLg"
+    title="YouTube video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
 
   <div class="video-description-box">
     <p class="video-description">
@@ -206,7 +211,7 @@
 
              <section id="ejercicios" class="content-card">
             <h2 class="section-title"> <i class="fas fa-university section-icon"></i> Ejercicios para resolver </h2>
-            <div class="solution-box">
+            <div class="problem-statement">
                 <p>1. Calcular \[ \int \frac{x}{(1+x^2)^2}\, dx \]</p>
                 <span class="labell">Respuesta:</span> <br>
 
@@ -256,7 +261,7 @@
                  <br>   
                  <div id="mensajito"></div>   
             </div>
-            <div class="solution-box">
+            <div class="problem-statement">
                 <p>2. Calcular \[ \int tan (x) sec ^3 (x) dx \]</p>
                 <span class="label">Respuesta:</span> <br>
 
@@ -302,26 +307,12 @@
                 \(\frac{1}{3} sec^3\,(x) + C\) <br><br>
 
             </div> 
-            </div>  
                 </p>
 
                 <div id="mensaje2"></div> 
-
-                <div class="solution-box">  
-                    Resuelve el siguiente quiz para practicar lo aprendido sobre el cambio de variable en integrales.
-                    <br><br>
-                    <iframe src="https://sustituciontrigonometrica.h5p.com/content/1292581328999122808/embed"
-                    aria-label="Clon de Clon de Clon de Example: Quiz (Question Set)" width="1088" height="637"
-                    frameborder="0" allowfullscreen="allowfullscreen" style="border-radius: 5%;"
-                    allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe>
-                <script src="https://sustituciontrigonometrica.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
-
-               </div>
            
-            
+
         </section> 
-        
-        
 
         <section id="foro" class="content-card">
             <h2 class="section-title"><i class="fas fa-comments section-icon"></i> Foro de Discusión</h2>
@@ -336,10 +327,6 @@
                         <input type="text" id="userName" class="form-input" placeholder="Escribe tu nombre..." name="userName" required>
                     </div>
                     <div class="form-group">
-                        <label for="userEmail" class="form-label">Email (opcional):</label>
-                        <input type="email" id="userEmail" class="form-input" placeholder="tu@email.com" name="userEmail">
-                    </div>
-                    <div class="form-group">
                         <label for="userComment" class="form-label">Comentario:</label>
                         <textarea id="userComment" class="form-textarea" placeholder="Escribe tu comentario aquí..." name="userComment" required></textarea>
                     </div>
@@ -350,9 +337,9 @@
                 </form>
 
                 <div class="comments-section">
-                    <h4 class="comments-title">Comentarios Recientes</h4>
+                    <h4 class="comments-title">Comentarios</h4>
                     <div class="comment-placeholder">
-                        <p>Aquí se mostrarán los comentarios de los usuarios.</p>
+                        <p>En este apartado se podrán ver los comentarios en un futuro cuando aprendamos bases de datos jejej</p>
                     </div>
                 </div>
             </div>
@@ -374,7 +361,20 @@
         <div class="container footer-container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <p class="footer-text">Proyecto educativo sobre Cambio de Variable en Cálculo Integral</p>
+                    <p class="footer-text">Proyecto educativo sobre Cambio de Variable en Cálculo Integral
+                        <p>Realizado por:</p>
+                    <ul>
+                        <li><strong>Josafat Casasola </strong></li>
+                        <li><strong>Zulmy Gil </strong></li>
+                        <li><strong>Adan Cruz </strong></li>
+                        <li><strong>Daniel Santos </strong></li>
+                        <li><strong>Angel Peraza </strong></li>
+  
+                    </ul>
+                    <p><strong>2A - Carrera de Sistemas</strong></p>
+
+                    <p class="footer-text">Instituto Tecnológico de Chetumal</p>
+                    </p>
                     <p class="footer-copyright">&copy; 2025 - Todos los derechos reservados</p>
                 </div>
                 
